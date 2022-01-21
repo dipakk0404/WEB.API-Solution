@@ -100,18 +100,7 @@ namespace WEBAPIAuthorization.Controllers
             
         }
 
-        
-        [HttpPost]
-        [CustomJwtToken]
-        public IHttpActionResult MyDelete_Post(int id)
-        {
-            Employee Emp = Db.Employees.FirstOrDefault(s => s.Id == id);
-            Db.Employees.Remove(Emp);
-
-            return Ok();
-
-        }
-
+       
 
     }
 }
