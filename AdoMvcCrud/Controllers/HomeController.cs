@@ -18,11 +18,11 @@ namespace AdoMvcCrud.Controllers
             List<Students> list =help.LoadAllWithAdaper(out b);
             if (b)
             {
-                ViewBag.Status = "Record Loading SuccessFul";
+                ViewBag.Status = "Loading SuccessFul";
             }
             else
             {
-                ViewBag.Status = "Record Loading Failed";
+                ViewBag.Status = "Loading Failed";
             }
             return View(list);
         }
@@ -44,11 +44,11 @@ namespace AdoMvcCrud.Controllers
             string stat;
             if (help.CreateAdapter(s,out stat))
             {
-                ViewBag.Status = "Student Creation Successful Your Id is="+stat.ToString();
+                ViewBag.Status = "Record creation Successful Your Id is="+stat.ToString();
             }
             else
             {
-                ViewBag.Status = "Student Creation Failed";
+                ViewBag.Status = "Record Creation Failed";
             }
             return View();
         }
@@ -65,11 +65,11 @@ namespace AdoMvcCrud.Controllers
         {
             if (help.Update(id, s))
             {
-                ViewBag.Status = "Update SuccessFul";
+                ViewBag.Status = "Record Update SuccessFul";
             }
             else
             {
-                ViewBag.Status = "Update Failed";
+                ViewBag.Status = "Record Update Failed";
             }
             return View();
         }
