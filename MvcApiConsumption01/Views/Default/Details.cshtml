@@ -1,0 +1,19 @@
+﻿@model MvcApiConsumption01.Models.Student
+
+@{
+    ViewBag.Title = "GetStudent";
+}
+
+<h2>GetStudent</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+
+    @Html.DisplayNameForModel()
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

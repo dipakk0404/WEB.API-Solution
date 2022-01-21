@@ -1,0 +1,59 @@
+﻿@model MVCWEBAPICONSUM.Models.StudentData
+
+@{
+    ViewBag.Title = "AjaxAction";
+}
+
+<h2>AjaxAction</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>TrainerId</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<link rel="shortcut icon" href="#">
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script>
+    $(function () {
+        $.ajax({
+            url: 'http://localhost:56415/api/Students',
+            method: 'GET',
+            dataType: 'jsonp',
+            success: function (response) {
+                debugger;
+                var tbody = $('table tbody');
+                for (var v = 0; v < response.length; v++) {
+                    var row = '<tr>';
+                    row += '<td>' + response[v].ID + '</td>';
+                    row += '<td>' +response[v].Name + '</td>';
+                    row += '<td>' + response[v].Gender + '</td>';
+                    row += '<td>' + response[v].Age + '</td>';
+                    row += '<td>' + response[v].TrainerId + '</td>';
+                    row += '</tr>';
+
+                    tbody.append(row);
+
+                }
+            },
+
+            error: function (result) {
+
+                alert("Failed");
+            }
+
+        });
+
+
+
+    });
+</script>
+
+

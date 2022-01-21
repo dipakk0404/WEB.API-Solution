@@ -1,0 +1,45 @@
+﻿
+    <!DOCTYPE html>
+    <html>
+    <head> 
+        <meta charset="utf-8" />
+        <title></title>
+        <script src="Scripts/jquery-1.10.2.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#Get').click(function () {
+                    var User = $('#user').val();
+                    var Pass = $('#pass').val();
+                });
+                $('#btn').click(function () {
+                    debugger;
+                    var list = $('#unlist');
+                    $.ajax({
+                        url: 'https://localhost:44353/api/Emp'
+                    });
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <label>UserName</label>
+        <input type="text" id="user" />
+        <label>Password</label>
+        <input type="text" id="pass">
+        <br />
+        <input type="submit" value="Click" id="btn">
+        <input type="submit" value="Data" id="Get">
+
+        <br />
+
+        <label id="lbl"></label>
+        <table id="unlist" border="1">
+            <tr>
+                <td>Name</td>
+                <td>Id</td>
+            </tr>
+        </table>
+
+    </body>
+</html>

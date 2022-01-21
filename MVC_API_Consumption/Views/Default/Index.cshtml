@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<html>
+<head>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>TrainerId</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+
+    </table>
+
+    <div><input type="button" value="GetData" id="btn" /></div>
+    
+    <script>
+        
+        $(document).ready(function () {
+            $('#btn').click(function () {
+
+                $.ajax({
+                    url: 'http://localhost:57487/api/Students',
+                    method: 'GET',
+                    dataType: "JSON",
+                    success: function (response) {
+                        
+                        alert(response.Data);
+                    },
+                    error: function (reason) {
+                        alert("Failed");
+                    }
+                });
+
+
+
+            });
+           
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+﻿@model BrearerTokenDemo.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mngid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mngid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Did)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Did)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    
+    @Html.ActionLink("Back to List", "Index")
+</p>

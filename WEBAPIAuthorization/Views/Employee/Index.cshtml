@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@model WEBAPIAuthorization.Models.UserCred
+
+<h2>Index</h2>
+<html>
+<head>
+</head>
+<body>
+    <b>@Html.ActionLink("LoadAll","AllEmp","Employee")</b>
+
+   @using (Html.BeginForm("Index","Employee",FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model=>model.UserName);
+                </td>
+                <td>
+                    @Html.EditorFor(model=>model.UserName);
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model=>model.Password);
+                </td>
+                <td>
+                    @Html.EditorFor(model=>model.Password);
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="TokenGeneration"/>
+                </td>
+            </tr>
+        </table>
+    }
+</body>
+</html>
+<h2>@ViewBag.Result</h2>
+
+
+

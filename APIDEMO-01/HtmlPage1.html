@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                var id = $('#id').val();
+                var Nm = $('#Nm').val();
+                var mg = $('#Mg').val();
+                var dd = $('#Dd').val();
+                
+                $.ajax({
+                    url: '/api/Emp/'+id,
+                    type: 'DELETE',
+                    dataType: 'json',
+                    success: function (data) {
+                        alert(data.responseText);
+                    },
+                    error: function (fail) {
+                        alert(fail.responseText);
+                    }
+
+
+                })
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <input type="text" id="id"/><br/>
+    <input type="text" id="Nm"/><br/>
+    <input type="text" id="Mg"/><br/>
+    <input type="text" id="Dd"/><br/>
+    <input type="button" value="Click" id="btn">
+    <br/>
+    <label id="lbl"></label>
+    <table id="unlist" border="1">
+        <tr>
+            <td>Name</td>
+            <td>Id</td>
+        </tr>
+    </table>
+
+</body>
+</html>
