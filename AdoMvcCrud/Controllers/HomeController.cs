@@ -86,11 +86,11 @@ namespace AdoMvcCrud.Controllers
         {
             if (help.Delete(id))
             {
-                ViewBag.Status = "Update SuccessFul";
+                ViewBag.Status = "Record Delete Successful";
             }
             else
             {
-                ViewBag.Status = "Update Failed";
+                ViewBag.Status = "Record Delete Failed";
             } 
             return View();
         }
